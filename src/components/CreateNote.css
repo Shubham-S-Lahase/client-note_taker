@@ -1,0 +1,24 @@
+.newnotecont{
+    width: 40%;
+    height: 60vh;
+    margin: 50px auto;
+    background-color: azure;
+}
+.newnotecont div{
+    margin-top: 10px;
+    width: 100%;
+}
+.newnotecont div input{
+    width: 90%;
+    margin: 10px;
+}
+#tt{
+    height: 20px;
+}
+#dsc{
+    height: 200px;
+}
+.newnotecont button{
+    width: 90%;
+    margin-left: 2%;
+}
