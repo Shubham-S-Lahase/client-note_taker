@@ -1,0 +1,19 @@
+.navcont nav{
+    display: flex;
+    justify-content:flex-start;
+    flex-direction: row;
+    background-color: black;
+}
+.navcont li{
+    text-align: center;
+    display: inline;
+    list-style: none;
+    font-size: larger;
+    margin: 10px 0;
+}
+#l1,#l2,#l3{
+    margin: 50px;
+    color: aliceblue;
+    text-decoration: none;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

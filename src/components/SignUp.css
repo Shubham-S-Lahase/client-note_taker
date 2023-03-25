@@ -1,0 +1,36 @@
+.signcont{
+    width: 100%;
+    height: 100vh;
+    background-color: aliceblue;
+    margin: 0;
+    padding-top: 100px;
+}
+.formcont{
+    width: 30%;
+    height: 60vh;
+    margin: 0 auto;
+   border-radius: 20px;
+    background-color: cadetblue;
+}
+.formcont form{
+    display: flex;
+    flex-direction: column;
+}
+.formcont input, button{
+    width: 50%;
+    height: 4vh;
+    margin: 4vh auto;
+}
+.formcont input{
+    font-size: large;
+    border: none;
+    border-bottom: 3px solid gray;
+}
+.formcont button{
+    font-size: large;
+    border-radius: 10px;
+}
+.formcont h4{
+    margin-top: 20px;
+    text-align: center;
+}
