@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./SignUp.css";
+import { Validation } from "simple-validator-js";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [cpassword, setCPassword] = useState("");
+  const [isChecked, setIsChecked] = useState(false);
 
   const navigate = useNavigate();
 
@@ -23,6 +26,10 @@ const SignUp = () => {
     }
   };
 
+  function checked(){
+    setIsChecked(!isChecked);
+  }
+
   return (
     <div className="signcont">
       <div className="formcont">
@@ -39,8 +46,26 @@ const SignUp = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <input type="password" placeholder="Confirm Password" />
-          <button>SignUp</button>
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            value={cpassword}
+            onChange={(e) => {
+              let cpd = e.target.value;
+              setCPassword(cpd);
+              let ValidationInfo = new Validation(cpd).passwordConfirmation(
+                password
+              );
+              if (ValidationInfo.result.isValid === false) {
+                alert("Passwords don't match");
+              }
+            }}
+          />
+          <div id="tc">
+            <input type="checkbox" onClick={checked} />
+            <h3>I agree With T&C</h3>
+          </div>
+          <button className={isChecked ? "checked" : "unchecked"}>SignUp</button>
         </form>
         <h4>
           Already have account??<Link to={"/"}>Click here</Link>

@@ -26,11 +26,31 @@
     border: none;
     border-bottom: 3px solid gray;
 }
-.formcont button{
-    font-size: large;
-    border-radius: 10px;
-}
 .formcont h4{
     margin-top: 20px;
     text-align: center;
+}
+#tc{
+    display:flex;
+    width: 100%;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#tc h3{
+    display: inline;
+}
+#tc input{
+    margin: 0;
+}
+.checked{
+    font-size: large;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.unchecked{
+    font-size: large;
+    border-radius: 10px;
+    cursor: not-allowed;
 }

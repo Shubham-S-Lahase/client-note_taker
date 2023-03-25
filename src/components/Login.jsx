@@ -2,11 +2,16 @@ import React from "react";
 import "./SignUp.css";
 import { useState } from "react";
 import { Navigate, Link } from "react-router-dom";
+import { UserContext } from "../UserContext";
+import { useContext } from "react";
+
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [navigate, setNavigate] = useState(false);
+  
+  const {setUserInfo} = useContext(UserContext);
 
     const login = async (e) => {
         e.preventDefault();
@@ -14,13 +19,17 @@ const Login = () => {
             method: "POST",
             body: JSON.stringify({ email, password }),
             headers: { "Content-Type": "application/json" },
+            credentials: "include"
           });
          if(response.ok){
+          response.json().then(userInfo => {
+            setUserInfo(userInfo);
             setNavigate(true);
+          })
          }else{
             alert("Invalid credentials");
          }
-    }
+    };
 
     if(navigate){
        return(
